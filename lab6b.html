@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Photo Gallery using Flex</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery-item {
+      flex: 1 1 calc(25% - 30px); /* 4 per row on large screens */
+      max-width: calc(25% - 30px);
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 992px) {
+      .gallery-item {
+        flex: 1 1 calc(33.33% - 30px); /* 3 per row */
+        max-width: calc(33.33% - 30px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-item {
+        flex: 1 1 calc(50% - 30px); /* 2 per row */
+        max-width: calc(50% - 30px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-item {
+        flex: 1 1 100%; /* 1 per row */
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Responsive Photo Gallery using Flex</h2>
+
+  <div class="gallery-container">
+    <div class="gallery-item"><img src="IMG_4457.jpeg" alt="Gallery 1"></div>
+    <div class="gallery-item"><img src="IMG_4599.jpeg" alt="Gallery 2"></div>
+    <div class="gallery-item"><img src="IMG_4617.jpeg" alt="Gallery 3"></div>
+    <div class="gallery-item"><img src="IMG_4477_SnapseedCopy.jpg" alt="Gallery 4"></div>
+    <div class="gallery-item"><img src="IMG_4248.jpeg" alt="Gallery 5"></div>
+    <div class="gallery-item"><img src="IMG_4767.jpg" alt="Gallery 6"></div>
+    <div class="gallery-item"><img src="IMG_4637.jpeg" alt="Gallery 7"></div>
+    <div class="gallery-item"><img src="IMG_4735.jpeg" alt="Gallery 8"></div>
+  </div>
+
+</body>
+</html>
